@@ -1,0 +1,50 @@
+{
+   "name": "webpack_bst4",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "dependencies": {
+      "@fortawesome/fontawesome-free": "^5.2.0",
+      "bootstrap": "^4.1.3",
+      "file-loader": "^1.1.11",
+      "jquery": "^3.3.1",
+      "metismenu": "^2.7.9",
+      "nunjucks-loader": "^3.0.0",
+      "popper.js": "^1.14.4",
+      "url-loader": "^1.0.1",
+      "webpack-cli": "^3.1.0"
+   },
+   "devDependencies": {
+      "autoprefixer": "^9.1.0",
+      "babel-core": "^6.26.3",
+      "babel-loader": "^7.1.5",
+      "babel-preset-es2015": "^6.24.1",
+      "clean-webpack-plugin": "^0.1.19",
+      "css-loader": "^1.0.0",
+      "exports-loader": "^0.7.0",
+      "extract-text-webpack-plugin": "^3.0.2",
+      "html-loader": "^0.5.5",
+      "html-webpack-plugin": "^3.2.0",
+      "mini-css-extract-plugin": "^0.4.1",
+      "node-sass": "^4.9.2",
+      "nunjucks-html-loader": "^1.1.0",
+      "optimize-css-assets-webpack-plugin": "^5.0.0",
+      "postcss-loader": "^2.1.6",
+      "precss": "^3.1.2",
+      "sass-loader": "^7.1.0",
+      "speed-measure-webpack-plugin": "^1.2.2",
+      "style-loader": "^0.21.0",
+      "uglifyjs-webpack-plugin": "^1.2.7",
+      "webpack": "^4.16.4",
+      "webpack-glob-entries": "^1.0.1",
+      "webpack-glob-folder-entries": "^1.0.0"
+   },
+   "scripts": {
+      "dev": "webpack --mode development --watch ",
+      "build": "webpack -p",
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC"
+}

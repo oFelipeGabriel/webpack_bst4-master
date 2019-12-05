@@ -1,0 +1,43 @@
+<!-- index.nunjucks -->
+{% extends "layout/_main_layout.njk" %}
+
+{% block body %}
+
+<div id="index-wrapper" class="container-fluid" >
+   <div class="row align-items-center">
+      <div class="col-md-3">
+         <img class="resize" style="max-width:396px;padding-top:20px;" src="../assets/necto_logo_esquema_branco.png" alt="">
+      </div>
+      <div class="col-md-5">
+         <div class="card p-3" id="necto-card-login">
+            <div class="card-body">
+               <h4 class="card-title">Acesso ao Sistema</h4>
+               <form>
+                  <div class="form-group">
+                     <label for="exampleInputEmail1">Endereço de e-mail</label>
+                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="e-mail">
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputPassword1">Senha</label>
+                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+
+                  <button type="submit" class="btn btn-block bg-success text-white">Submit</button>
+               </form>
+               <p>
+                  <ul class="">
+                     <li class=""><a href="#"> Resetar senha</a></li>
+                     <li class=""><a href="#"> Cadastre-se</a></li>
+                  </ul>
+               </p>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4">
+
+      </div>
+   </div>
+</div>
+
+{% endblock body %}
+

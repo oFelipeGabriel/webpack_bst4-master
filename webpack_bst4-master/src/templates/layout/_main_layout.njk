@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="author" content="NECTO Systems">
+   <meta name="description" content="Template Necto Systems ">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <link rel="icon" href="../../../../favicon.ico">
+
+   <title>Template Necto Systems</title>
+
+   <style>
+   {% block extra_css %} {# EXTRA CSS em páginas específicas USE COM MODERACAO !! #} {% endblock %}
+   </style>
+</head>
+<body>
+{% block body %}
+
+   <div id="main-wrapper">
+   {% block main_wrapper %}
+
+      <div id="page-wrapper">
+      {% block page_wrapper %}
+
+         {# ---- PAGE HEADER #}
+         <nav id="page-header" class="navbar navbar-expand-md fixed-top">
+
+            <h4>{% block page_title %} [Aqui vai o título da Página] {% endblock page_title %}</h4>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+               <ul class="navbar-nav mr-auto">
+               {% block context_menu %}
+                  {% include "_contextmenu_sample.njk" %}
+               {% endblock context_menu %}
+               </ul>
+            </div>
+            {% include "_contextmenu_right.njk" %}
+         </nav>
+
+
+         {% block sidebar %}
+         <aside class="sidebar">
+            <div id="sidebar-container" class="sidebar-container">
+               <div id="sidebar-header">
+                  <div class="brand"></div>
+               </div>
+               {% include "_sidebar_menu_itens.njk" %}
+            </div>
+            {% include "_sidebar_footer.njk" %}
+         </aside>
+         {% endblock sidebar %}
+
+         <section id="main-section">
+            {% block content %}
+            {# CONTEUDO <<<<<<<<<<<<<<<<<<<<<< #}
+            {% endblock content %}
+         </section>
+
+
+
+         {# FOOTER SOMENTE para páginas com tabelas SEM CARD  #}
+
+
+
+
+      {% endblock page_wrapper %}
+      </div>
+
+   {% endblock main_wrapper %}
+   </div>
+
+{% endblock body %}
+</body>
+</html>

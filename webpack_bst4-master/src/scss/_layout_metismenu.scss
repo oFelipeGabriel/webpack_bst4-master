@@ -1,0 +1,577 @@
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    min-height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    color: $color-text;
+    overflow-x: hidden;
+    font-weight:200;
+}
+
+body{
+    font-weight:200;
+}
+
+form{
+    fieldset {
+        min-width: 0;
+        padding:5px;
+        border: 0;
+
+        &>legend{
+            font-size: .9em;
+            margin-bottom: 0;
+
+        }
+
+    }
+}
+
+label{
+    margin-bottom:0;
+}
+
+#main-wrapper {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#main-section{
+    margin-top:70px;
+    padding: 15px;
+}
+
+#ref {
+    .color-primary {
+        color: $primary;
+    }
+
+    .chart {
+        .color-primary {
+            color: $chart-color-primary;
+        }
+        .color-secondary {
+            color: $chart-color-secondary;
+        }
+    }
+}
+
+// ==================== APP
+
+#page-wrapper {
+    position: relative;
+    width: 100%;
+    padding-left: $sidebar-width;
+    min-height: 100vh;
+    margin: 0 auto;
+    left: 0;
+    background-color: $color-bg;
+    box-shadow: $box-shadow;
+    transition: left 0.3s ease, padding-left 0.3s ease;
+    overflow: hidden;
+
+    .content {
+
+        $padding-x: $content-padding-x-md;
+        $padding-y: $content-padding-y-md;
+
+        padding: $header-height + $padding-y $padding-x $footer-height + $padding-y $padding-x;
+        min-height: 100vh;
+
+        @include media-up(xl) {
+            $padding-x: $content-padding-x-xl;
+            $padding-y: $content-padding-y-xl;
+
+            padding: $header-height + $padding-y $padding-x $footer-height + $padding-y $padding-x;
+        }
+
+        @include media(lg) {
+            $padding-x: $content-padding-x-lg;
+            $padding-y: $content-padding-y-lg;
+
+            padding: $header-height + $padding-y $padding-x $footer-height + $padding-y $padding-x;
+        }
+
+        @include media(md) {
+            $padding-x: $content-padding-x-md;
+            $padding-y: $content-padding-y-md;
+
+            padding: $header-height + $padding-y $padding-x $footer-height + $padding-y $padding-x;
+        }
+
+        @include media-down(sm) {
+            $padding-x: $content-padding-x-sm;
+            $padding-y: $content-padding-y-sm;
+
+            padding: $header-height-xs + $padding-y $padding-x $footer-height + $padding-y $padding-x;
+        }
+    }
+
+
+    @include media-down(md) {
+        padding-left: 0;
+        // background-color: #ccc;
+        // left: -$sidebar-width;
+        // width: calc(100% + #{$sidebar-width});
+    }
+
+    &.sidebar-open {
+        // Disable content scrolling when sidebar is open
+        @include media-down(md) {
+            left: 0;
+            // position: absolute;
+            // height: 100%;
+            // overflow: hidden;
+        }
+    }
+
+    &.blank {
+        background-color: #667380;
+    }
+
+}
+
+
+#page-header, #page-footer {
+    background-color: $navbar-background-color;
+    left: $sidebar-width;
+    min-height: $header-height;
+    box-shadow: $box-shadow;
+    @include media-down(md) {
+        left: 0;
+    }
+
+    @include media-down(sm) {
+        left: 0;
+        height: $header-height-xs;
+    }
+
+    .header-fixed & {
+        position: fixed;
+    }
+
+    .header-block {
+        @include media-down(sm) {
+            padding: 5px;
+        }
+    }
+}
+
+.header-block>p{
+    margin:0 0 0 0;
+
+}
+
+// =================== SIDEBAR
+
+#sidebar-header {
+    height: $header-height;
+
+    .brand {
+        color: #fff;
+        text-align: right;
+        padding: 5px;
+        line-height: $header-height;
+        min-height: $header-height;
+        font-size: 16px;
+        background-image: url("../assets/necto_h_150x54.png");
+        background-color: $sidebar-color-primary; /* Used if the image is unavailable */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        @include media-down(sm) {
+            line-height: $header-height-xs;
+            font-size: 16px;
+        }
+    }
+}
+
+.sidebar {
+    background-color: $sidebar-color-primary;
+    width: $sidebar-width;
+    padding-bottom: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transition: left 0.3s ease;
+    z-index: 20;
+
+    box-shadow: $box-shadow;
+
+    @include media-down(md) {
+        position: fixed;
+        left: -$sidebar-width;
+    }
+
+    .sidebar-fixed & {
+        position: fixed;
+    }
+
+    .sidebar-open & {
+        left: 0;
+
+    }
+
+    .sidebar-container {
+        position: absolute;
+        top: 0;
+        bottom: 51px;
+        width: 100%;
+        left: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar-track {
+            background-color: darken($sidebar-color-primary, 6.5%);
+        }
+    }
+
+    .label {
+        font-size: .75em;
+        display: inline-block;
+        border-radius: .2em;
+        padding: 2px 5px;
+        background-color: #ccc;
+        color: #000;
+        margin: 0 3px;
+    }
+
+    .label-screenful {
+        color: #fff;
+        background-color: #6769d4;
+    }
+
+
+
+}
+
+.sidebar-overlay {
+    position: absolute;
+    display: none;
+    left: 200vw;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 15;
+
+    @include media-down(md) {
+        display: block;
+    }
+
+    @include media-down(sm) {
+        background-color: fade-out(#000, 0.3);
+    }
+
+
+    .sidebar-open & {
+        @include media-down(md) {
+            left: 0;
+            opacity: 1;
+        }
+    }
+}
+
+.sidebar-mobile-menu-handle {
+    display: none;
+    position: absolute;
+    top: $header-height-xs;
+    background-color: transparent;
+    width: 30px;
+    bottom: 0;
+    z-index: 10;
+
+    @include media-down(md) {
+        display: block;
+
+    }
+}
+
+.metismenu {
+        font-size: $font-size-base;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+
+        // Common styles
+        li {
+            a:focus,
+            .open & a:focus {
+                background-color: inherit;
+            }
+        }
+
+        // Second + menu items
+        ul {
+            padding: 0;
+            height: 0px;
+            overflow: hidden;
+            li {
+                a {
+                    i{padding-right:5px;}
+                }
+            }
+
+            .loaded & {
+                height: auto;
+            }
+        }
+
+        li.active ul {
+            height: auto;
+            background-color: $submenu-bg-color ;
+        }
+
+        li a {
+            color: $sidebar-color-text-active;
+            text-decoration: none;
+            display: block;
+        }
+
+
+
+        // All links which are not active
+        // On hover bg become darker
+        // Their color become lighter
+        li a:hover,
+        li.open > a,
+        li.open a:hover {
+            color: $sidebar-color-text-active;
+            background-color: inherit;
+        }
+
+        li arrow {
+            float: right;
+            font-size: 18px;
+            line-height: initial;
+            transition: all 0.3s ease;
+            margin-right: 0;
+
+            &:before {
+                content: "\f105";
+            }
+        }
+
+        li.active > {
+            .has-arrow:after{
+                transform: rotate(-45deg);
+            }
+        }
+
+        li.active.open > {
+            .has-arrow:after{
+                transform: rotate(-135deg);
+            }
+        }
+
+
+        // First level items
+        &> li {
+
+            // First level items links
+            & > a {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            // First level active links have primary background
+            &.active > a,
+            &.active > a:hover {
+                background-color: inherit;
+                color: $color-text-inverse;
+            }
+
+            // First level active links have bit darker background
+            &.open > a {
+                background-color: inherit;
+            }
+
+            // First level item links arrow
+            & > a {
+                i {
+                    margin-right: 5px;
+                    font-size: $font-size-base;
+
+                    &.has-arrow {
+                        font-size: $font-size-base;
+                    }
+                }
+            }
+
+        }
+
+        // Second level items
+        & > li > .sidebar-nav> li {
+
+            // Second level and deeper items links
+            // Have bit darker background and more padding
+            // from left side
+            a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 20px;
+                padding-right: 15px;
+                background-color: inherit;
+            }
+
+            // Second level active items links
+            // Have brighter color
+            &.active a {
+                color: $sidebar-color-text-active;
+            }
+
+            // Third level items
+            & > .sidebar-nav > li {
+                a {
+                    padding-left: 60px;
+                    padding-right: 15px;
+                }
+
+                & > .sidebar-nav > li {
+                    a {
+                        padding-left: 70px;
+                    }
+                }
+            }
+        }
+    }
+
+#admin-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: $sidebar-width;
+    border-top: 2px solid $secondary;
+
+    background-color: $primary-darker;
+
+    @include media-down(sm) {
+
+    }
+
+    .sidebar-open & {
+        @include media-down(md) {
+            left: 0;
+        }
+    }
+
+    @include media-down(md) {
+        // position: absolute;
+        transition: left 0.3s ease;
+        left: -$sidebar-width;
+    }
+
+    & > li {
+        & > a {
+            background-color: inherit;
+        }
+        & > a:hover,
+        &.open > a {
+            background-color: $sidebar-color-secondary;
+        }
+    }
+}
+
+
+#login-wrapper{
+    position: relative;
+    width: 100%;
+    height:100%;
+    margin: 0 auto;
+    left: 0;
+    background-color: $primary;
+    background-image: url("../assets/background_necto.png");
+    background-repeat:no-repeat;
+    background-size:i;
+    background-position: left;
+  }
+
+#logo-login {
+    position:absolute;
+    top:10px;
+    left:30px;
+    min-height:70px;
+    min-width:170px;
+    background-image: url("../assets/necto_h_branco.png");
+    padding: 15px;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    z-index:1;
+}
+
+// Na verdade o header aqui, é o footer com links e logo
+#login-wrapper{
+    header{
+        background-color: $primary-darker;
+        height:$header-height;
+    }
+}
+
+
+.card {
+    box-shadow: $box-shadow;
+}
+
+#card-necto-esquema, #necto-card-login{
+    color: #fff;
+    background:transparent;
+    border:none;
+}
+
+img.resize{
+    width:100%;
+    height:auto;
+}
+
+#index-wrapper{
+    background-color: $primary ;
+    width:100%;
+    height:100%;
+
+}
+
+.table>thead>tr>th{
+    border-top:0;
+}
+
+
+
+.table>thead .sort {
+    position:relative
+    >:after{
+        font-family: 'Font Awesome 5 Free';
+        content: "\f160";    
+    }
+}
+
+.table>thead .sort[aria-sort="ascending"]:after {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f160";
+    position: absolute;
+    bottom: .4em;
+    display: block;
+    opacity: .3;
+    right:1em;
+
+}
+
+//footer da página igual footer do card
+.footer{
+    padding-top: 0.75rem;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+}
+
+
+

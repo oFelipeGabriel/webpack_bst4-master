@@ -1,0 +1,238 @@
+/*************************************************************
+*                       App Variables
+**************************************************************/
+
+
+/*************************************************************
+*                     Colors Definitions
+**************************************************************/
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$blue:    #1D388C !default; //NECTO Blue
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #6CA043 !default; // necto green
+$teal:    #BEE2D3 !default;
+$cyan:    #17a2b8 !default;
+
+$colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+  (
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray":       $gray-600,
+    "gray-dark":  $gray-800
+  ),
+  $colors
+);
+
+$primary:       $blue !default;  // NECTO
+$secondary:     $green !default; // Necto light green
+$third:         $teal;        // NECTO
+$success:       $green !default;
+$info:          $third !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+$primary-darker: darken($primary, 10%) !default;
+
+
+
+
+$color-divider: #d7dde4 !default;
+$color-bg: #f0f3f6 !default;
+
+$color-text: #4f5f6f !default;
+$color-text-light: #7e8e9f !default;
+$color-text-muted: #C2CCD6;
+$color-text-inverse: #ccc !default;
+$color-text-passive: #c5c5c5 !default;
+
+$color-success: $primary !default;
+$color-info: $secondary !default;
+$color-warning: #fe974b !default;
+$color-danger: #FF4444 !default;
+$color-inverse: #131e26 !default;
+
+$box-shadow: 0 3px 2px rgba(0, 0, 0, .23), 0 3px 2px rgba(0, 0, 0, 0.23);
+
+/************* SPACER **********************/
+
+$spacer: 1rem !default;
+$spacers: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3)
+  ),
+  $spacers
+);
+
+
+/******************* FONT ********************************/
+
+$font-size-base:              0.9rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg:                ($font-size-base * 1.25) !default;
+$font-size-sm:                ($font-size-base * .875) !default;
+
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+
+$font-weight-base:            $font-weight-normal !default;
+$line-height-base:            1.4 !default;
+
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
+$h6-font-size:                $font-size-base !default;
+
+$headings-margin-bottom:      ($spacer / 2) !default;
+$headings-font-family:        inherit !default;
+$headings-font-weight:        500 !default;
+$headings-line-height:        1.2 !default;
+$headings-color:              inherit !default;
+
+
+/*************************************************************
+*                   Common Element Variables
+**************************************************************/
+
+// Buttons
+$btn-radius: 25px !default;
+
+$btn-primary-color: $primary !default;
+$btn-primary-color-text: $color-text-inverse !default;
+
+
+// Links
+$link-color: $blue !default;
+$link-transition: initial;
+$link-decoration: none;
+
+$link-hover-color: darken($primary, 8%) !default;
+$link-hover-decoration: none !default;
+
+// Header
+$header-height: 56px !default;
+$header-height-xs: 50px !default;
+
+// Sidebar
+$sidebar-width: 230px !default;
+
+// Footer
+$footer-height: 50px !default;
+
+
+// Dropdowns
+$dropbown-color-border: fade-out($color-text-light, 0.9) !default;
+$dropdown-link-hover-color-bg: #f5f5f5 !default;
+
+// Content
+$content-padding-x-xl: 40px !default;
+$content-padding-y-xl: 35px !default;
+
+$content-padding-x-lg: 35px !default;
+$content-padding-y-lg: 30px !default;
+
+$content-padding-x-md: 20px !default;
+$content-padding-y-md: 25px !default;
+
+$content-padding-x-sm: 20px !default;
+$content-padding-y-sm: 20px !default;
+
+$content-padding-x-xs: 10px !default;
+$content-padding-y-xs: 15px !default;
+
+
+// Card
+
+$card-bg: $gray-100;
+
+$card-padding-x: 15px !default;
+$card-padding-x-xl: 20px !default;
+$card-padding-x-sm: 10px !default;
+
+$card-margin-bottom: 10px;
+
+// Item list
+$item-list-color-border: lighten($color-divider, 6%) !default;
+
+// Charts
+$chart-color-primary: $primary !default;
+$chart-color-secondary: lighten($chart-color-primary, 10%) !default;
+
+// SIDEBAR
+$sidebar-color-primary: darken($primary, 10%) !default;
+$sidebar-color-secondary: darken($sidebar-color-primary, 10%) !default;
+
+$submenu-bg-color: lighten($sidebar-color-primary, 5%) !default;
+
+$sidebar-color-text: fade-out($color-text-inverse, 0.5) !default;
+$sidebar-color-text-active: $color-text-inverse;
+
+
+$navbar-background-color: $gray-300;
+
+
+// ####  Table
+
+// $table-active-bg
+// $table-head-color
+// $table-head-bg
+// $table-dark-color
+// $table-dark-border-color
+$table-bg: transparent;
+// $table-dark-bg
+$table-accent-bg: #fbfbfb;
+// $table-dark-accent-bg
+$table-hover-bg: $third;
+$table-dark-hover-bg: $third;
+
+table.table {
+    background-color: $table-bg;
+}
+
+// Títulos, label, coluna, tabela ...
+h1, h2, h3, h4, table.table thead tr th, form label{
+    color: $primary !important;
+}
+// Rounded corners
+$enable-rounded: false;
+
+

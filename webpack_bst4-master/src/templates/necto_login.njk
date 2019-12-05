@@ -1,0 +1,68 @@
+{% extends "layout/_main_layout.njk" %}
+
+{% block body %}
+
+<div id="logo-login">
+
+</div>
+<div id="login-wrapper" class="d-flex justify-content-center align-items-center">
+
+   <div class="card-group">
+
+      <div class="card sm-3 mb-3" id="card-necto-esquema">
+         <img class="resize" src="../assets/necto_logo_esquema.png" width="318px" height="468px" alt="">
+
+      </div>
+
+      <div class="card sm-3 mb-3" id="necto-card-login">
+         <div class="card-body">
+            <h4 class="card-title">Acesso ao Sistema</h4>
+            <form>
+               <div class="form-group">
+                  <label for="exampleInputEmail1">Endereço de e-mail</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="e-mail">
+               </div>
+               <div class="form-group">
+                  <label for="exampleInputPassword1">Senha</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+               </div>
+
+               <button type="submit" class="btn btn-block bg-success text-white">Submit</button>
+            </form>
+            <p>
+            <ul class="">
+               <li class=""><a href="#"> Resetar senha</a></li>
+               <li class=""><a href="#"> Cadastre-se</a></li>
+            </ul>
+            </p>
+         </div>
+      </div>
+
+   </div>
+
+   <header class="navbar navbar-expand  flex-column flex-md-row bd-navbar fixed-bottom">
+      <a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Bootstrap"></a>
+
+      <div class="navbar-nav-scroll">
+         <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+               <a class="nav-link " href="/">Link No.</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link active" href="#">Link No.</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#" rel="noopener">Link No.</a>
+            </li>
+         </ul>
+      </div>
+
+      <a class="navbar-nav flex-row ml-md-auto d-none d-md-flex" href="https://nectosystems.com.br">
+         <img src="../assets/necto_h_100x36.png" alt="Necto Systems logo">
+      </a>
+   </header>
+
+</div>
+
+
+{% endblock body %}
